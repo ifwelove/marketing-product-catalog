@@ -1,0 +1,25 @@
+{
+    "name": "verybuytw/marketing-product-catalog",
+    "type": "library",
+    "authors": [
+        {
+            "name": "ifwelove",
+            "email": "a5963745@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "symfony/var-dumper": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Verybuy\\Marketing\\Product\\Catalog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Marketing\\Product\\Catalog\\": "tests/"
+        }
+    }
+}
