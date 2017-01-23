@@ -23,5 +23,10 @@ abstract class AbstractAdapter implements AdapterContract
         return $this;
     }
 
+    public function addCDATA(string $string)
+    {
+        return "<![CDATA[{$string}]]>";
+    }
+
     abstract protected function validation();
 }
