@@ -9,5 +9,6 @@ interface AdapterContract
 
     public function config(array $config);
     public function import(array $data);
+    public function validation();
     public function toXml();
 }

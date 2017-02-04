@@ -5,7 +5,7 @@ namespace Tests\Marketing\Product\Catalog;
 use Verybuy\Marketing\Product\Catalog\Factory\MarketingFactory;
 use Verybuy\Marketing\Product\Catalog\Adapter\AdapterContract;
 
-class FacebookAdapterTest
+class FacebookAdapterTest extends AbstractTestCase
 {
     protected $config;
     protected $resourceStub;
@@ -30,7 +30,9 @@ class FacebookAdapterTest
                 'condition' => '236',
                 'availability' => '236',
                 'price' => '236',
+                'product_type' => 1,
                 'google_product_category' => 1,
+                'custom_label_0' => 100,
                 'shipping' => [
                     'country' => 'TW',
                     'service' => 'Standard',
@@ -47,6 +49,8 @@ class FacebookAdapterTest
                 'image_link' => '236',
                 'condition' => '236',
                 'availability' => '236',
+                'product_type' => 1,
+                'custom_label_0' => 100,
                 'google_product_category' => 1,
                 'shipping' => [
                     'country' => 'TW',

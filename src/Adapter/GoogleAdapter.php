@@ -4,18 +4,10 @@ namespace Verybuy\Marketing\Product\Catalog\Adapter;
 
 class GoogleAdapter extends AbstractAdapter
 {
-    protected function validation()
-    {
-        //@todo success prod, error prod
-        $this->processed['success'] = $this->original;
-
-        return $this;
-    }
-
     public function toXml()
     {
         $namespace = 'http://base.google.com/ns/1.0';
-        $array = $this->processed['success'];
+        $array = $this->getSuccessCollection();
         $xml = new \SimpleXMLElement(sprintf('<feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="%s"/>', $namespace));
         if (isset($this->config['title'])) {
             $xml->addChild('title', $this->addCDATA($this->config['title']));
