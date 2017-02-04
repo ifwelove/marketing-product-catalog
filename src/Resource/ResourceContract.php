@@ -31,7 +31,7 @@ abstract class ResourceContract implements ResourceInterface
         return $this;
     }
 
-    protected function getRawData()
+    public function getRawData()
     {
         return $this->raw;
     }

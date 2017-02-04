@@ -1,29 +1,32 @@
 <?php
 namespace Verybuy\Marketing\Product\Catalog\Resource;
 
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitBasicProductData as BasicProductData;
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitPriceAndAvailability as PriceAndAvailability;
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitProductCategory as ProductCategory;
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitProductIdentifiers as ProductIdentifiers;
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitDetailedProductDescription as DetailedProductDescription;
+
 class GoogleResource extends ResourceContract
 {
-    private function validProductType()
-    {
-        $this->getRawData()['product_type'];
-        
-        return $this;
-    }
-
-    private function validPrice()
-    {
-        if ($this->getRawData()['price'] < 100) {
-            // $this->getErrorMassageBag()->add('price', 'price has to gratter than 100.');
-            // $this->getErrorMassageBag()->add('price', 'price has to gratter than 50.');
-            // dump($this->getErrorMassageBag()->get('price', 'aaaa :message'));
-        }
-
-        return $this;
-    }
+    use BasicProductData,
+        PriceAndAvailability,
+        ProductCategory,
+        ProductIdentifiers,
+        DetailedProductDescription;
 
     public function validate()
     {
+        $this->validId();
+        $this->validTitle();
         $this->validProductType();
         $this->validPrice();
+        $this->validLink();
+        $this->validImageLink();
+        $this->validAvailability();
+        $this->validDescription();
+        $this->validGoogleProductCategory();
+        $this->validCondition();
+        $this->validBrand();
     }
 }

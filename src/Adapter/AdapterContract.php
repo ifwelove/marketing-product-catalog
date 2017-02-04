@@ -6,6 +6,7 @@ interface AdapterContract
 {
     const FACEBOOK = 'facebook';
     const GOOGLE = 'google';
+    const XML_NAMESPACE = 'http://base.google.com/ns/1.0';
 
     public function config(array $config);
     public function import(array $data);

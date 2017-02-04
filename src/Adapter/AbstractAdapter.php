@@ -3,6 +3,7 @@
 namespace Verybuy\Marketing\Product\Catalog\Adapter;
 
 use ReflectionClass;
+use Verybuy\Marketing\Product\Catalog\Exceptions\ConfigException;
 
 abstract class AbstractAdapter implements AdapterContract
 {
@@ -20,6 +21,12 @@ abstract class AbstractAdapter implements AdapterContract
 
     public function config(array $config)
     {
+        if (!isset($config['title'])) {
+            throw new ConfigException('config not set title');
+        }
+        if (!isset($config['link'])) {
+            throw new ConfigException('config not set link');
+        }
         $this->config = $config;
 
         return $this;
@@ -44,22 +51,22 @@ abstract class AbstractAdapter implements AdapterContract
         return "<![CDATA[{$string}]]>";
     }
 
-   protected function getImportCollection()
-   {
-        return $this->import;
-   }
+    protected function getImportCollection()
+    {
+         return $this->import;
+    }
 
-   public function getSuccessCollection()
-   {
-        return $this->processed->get('success');
-   }
+    public function getSuccessCollection()
+    {
+         return $this->processed->get('success');
+    }
 
-   public function getFailureCollection()
-   {
-        return $this->processed->get('failure');
-   }
+    public function getFailureCollection()
+    {
+         return $this->processed->get('failure');
+    }
 
-  public function validation()
+    public function validation()
     {
         $this->getImportCollection()->each(function ($resource) {
             $resource->validate();

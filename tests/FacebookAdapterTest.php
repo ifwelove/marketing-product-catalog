@@ -66,8 +66,8 @@ class FacebookAdapterTest extends AbstractTestCase
         $xml = MarketingFactory::create(AdapterContract::FACEBOOK)
             ->config($this->config)
             ->import($this->resourceStub)
-            ->toXml();
-
+             ->toXml()
+        ;
         //@todo xml assert
     }
 
