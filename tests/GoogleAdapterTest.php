@@ -5,7 +5,7 @@ namespace Tests\Marketing\Product\Catalog;
 use Verybuy\Marketing\Product\Catalog\Factory\MarketingFactory;
 use Verybuy\Marketing\Product\Catalog\Adapter\AdapterContract;
 
-class GoogleAdapterTest
+class GoogleAdapterTest extends AbstractTestCase
 {
     protected $config;
     protected $resourceStub;
@@ -24,35 +24,39 @@ class GoogleAdapterTest
                 'id' => '745130',
                 'title' => '包郵大碼女內褲性感蕾絲面料透明網紗中腰三角褲包臀無痕提臀胖mm',
                 'description' => '包郵大碼女內褲性感蕾絲面料透明網紗中腰三角褲包臀無痕提臀胖mm',
-                'brand' => '236',
-                'link' => '236',
-                'image_link' => '236',
-                'condition' => '236',
-                'availability' => '236',
-                'price' => '236',
+                'brand' => 'VeryBuy',
+                'link' => 'http://www.verybuy.cc/user_submit/item/745130',
+                'image_link' => 'http://img.verybuy.cc/taobao_user_submit/1a842d087b481d7cae79f76dda8fd5a6_600.jpg',
+                'condition' => 'new',
+                'availability' => 'in stock',
+                'price' => 236,
+                'product_type' => 1,
                 'google_product_category' => 1,
-                'shipping' => [
-                    'country' => 'TW',
-                    'service' => 'Standard',
-                    'price' => '236 TWD',
-                ]
+                'custom_label_0' => 3,
+//                'shipping' => [
+//                    'country' => 'TW',
+//                    'service' => 'Standard',
+//                    'price' => '236 TWD',
+//                ]
             ],
             [
                 'id' => '745123',
                 'title' => '一片式無肩帶內衣聚攏防滑隱形婚紗禮服專用美背小胸加厚文胸套裝',
                 'description' => '一片式無肩帶內衣聚攏防滑隱形婚紗禮服專用美背小胸加厚文胸套裝',
-                'price' => 0,
-                'brand' => '236',
-                'link' => '236',
-                'image_link' => '236',
-                'condition' => '236',
-                'availability' => '236',
+                'price' => 409,
+                'brand' => 'VeryBuy',
+                'link' => 'http://www.verybuy.cc/user_submit/item/745123',
+                'image_link' => 'http://img.verybuy.cc/taobao_user_submit/679711600f1339ad421e96c571290cda_600.jpg',
+                'condition' => 'new',
+                'availability' => 'in stock',
+                'product_type' => 1,
                 'google_product_category' => 1,
-                'shipping' => [
-                    'country' => 'TW',
-                    'service' => 'Standard',
-                    'price' => '236 TWD',
-                ]
+                'custom_label_0' => 5,
+//                'shipping' => [
+//                    'country' => 'TW',
+//                    'service' => 'Standard',
+//                    'price' => '236 TWD',
+//                ]
             ],
         ];
     }
@@ -62,8 +66,9 @@ class GoogleAdapterTest
         $xml = MarketingFactory::create(AdapterContract::GOOGLE)
             ->config($this->config)
             ->import($this->resourceStub)
-            ->toXml();
-
+             ->toXml()
+        ;
+//        dump($xml);
         //@todo xml assert
     }
 
