@@ -66,9 +66,9 @@ class GoogleAdapterTest extends AbstractTestCase
         $xml = MarketingFactory::create(AdapterContract::GOOGLE)
             ->config($this->config)
             ->import($this->resourceStub)
-//             ->toXml()
+             ->toXml()
         ;
-        dump($xml);
+//        dump($xml);
         //@todo xml assert
     }
 
