@@ -48,6 +48,7 @@ class GoogleAdapterTest extends AbstractTestCase
                 'link' => 'http://www.verybuy.cc/user_submit/item/745123',
                 'image_link' => 'http://img.verybuy.cc/taobao_user_submit/679711600f1339ad421e96c571290cda_600.jpg',
                 'condition' => 'new',
+                'adult' => 'yes',
                 'availability' => 'in stock',
                 'product_type' => 1,
                 'google_product_category' => 1,

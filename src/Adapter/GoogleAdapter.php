@@ -26,6 +26,7 @@ class GoogleAdapter extends AbstractAdapter
             $entry->addChildCData('image_link', $rawData['image_link'], $namespace);
             $entry->addChildCData('brand', $rawData['brand'], $namespace);
             $entry->addChild('condition', $rawData['condition'], $namespace);
+            $entry->addChild('adult', $rawData['adult'], $namespace);
             $entry->addChild('availability', $rawData['availability'], $namespace);
             $entry->addChild('price', $rawData['price'], $namespace);
             $entry->addChildCData('product_type', $rawData['product_type'], $namespace);

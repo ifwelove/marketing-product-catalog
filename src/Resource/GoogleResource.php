@@ -27,6 +27,7 @@ class GoogleResource extends ResourceContract
         $this->validDescription();
         $this->validGoogleProductCategory();
         $this->validCondition();
+        $this->validAdult();
         $this->validBrand();
     }
 }
