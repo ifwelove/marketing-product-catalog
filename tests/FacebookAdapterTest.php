@@ -33,6 +33,7 @@ class FacebookAdapterTest extends AbstractTestCase
                 'product_type' => 1,
                 'google_product_category' => 1,
                 'custom_label_0' => 100,
+                'custom_label_1' => 1,
                 'shipping' => [
                     'country' => 'TW',
                     'service' => 'Standard',
@@ -51,6 +52,7 @@ class FacebookAdapterTest extends AbstractTestCase
                 'availability' => '236',
                 'product_type' => 1,
                 'custom_label_0' => 100,
+                'custom_label_1' => 1,
                 'google_product_category' => 1,
                 'shipping' => [
                     'country' => 'TW',

@@ -33,6 +33,7 @@ class GoogleAdapterTest extends AbstractTestCase
                 'product_type' => 1,
                 'google_product_category' => 1,
                 'custom_label_0' => 3,
+                'custom_label_1' => 1,
 //                'shipping' => [
 //                    'country' => 'TW',
 //                    'service' => 'Standard',
@@ -53,6 +54,7 @@ class GoogleAdapterTest extends AbstractTestCase
                 'product_type' => 1,
                 'google_product_category' => 1,
                 'custom_label_0' => 5,
+                'custom_label_1' => 1,
 //                'shipping' => [
 //                    'country' => 'TW',
 //                    'service' => 'Standard',

@@ -31,6 +31,7 @@ class FacebookAdapter extends AbstractAdapter
             $entry->addChildCData('product_type', $rawData['product_type'], $namespace);
             $entry->addChildCData('google_product_category', $rawData['google_product_category'], $namespace);
             $entry->addChildCData('custom_label_0', $rawData['custom_label_0'], $namespace);
+            $entry->addChildCData('custom_label_1', $rawData['custom_label_1'], $namespace);
 //            $shipping = $entry->addChild('shipping');
 //            $shipping->addChild('country', $rawData['shipping']['country']);
 //            $shipping->addChild('service', $rawData['shipping']['service']);
