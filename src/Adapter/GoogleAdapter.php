@@ -33,6 +33,12 @@ class GoogleAdapter extends AbstractAdapter
             $entry->addChildCData('google_product_category', $rawData['google_product_category'], $namespace);
             $entry->addChildCData('custom_label_0', $rawData['custom_label_0'], $namespace);
             $entry->addChildCData('custom_label_1', $rawData['custom_label_1'], $namespace);
+            $entry->addChildCData('custom_label_2', $rawData['custom_label_2'], $namespace);
+            $entry->addChildCData('custom_label_3', $rawData['custom_label_3'], $namespace);
+            $entry->addChildCData('custom_label_4', $rawData['custom_label_4'], $namespace);
+            $entry->addChildCData('custom_label_5', $rawData['custom_label_5'], $namespace);
+            $entry->addChildCData('custom_label_6', $rawData['custom_label_6'], $namespace);
+            $entry->addChildCData('custom_label_7', $rawData['custom_label_7'], $namespace);
 //            $shipping = $entry->addChild('shipping');
 //            $shipping->addChild('country', $rawData['shipping']['country']);
 //            $shipping->addChild('service', $rawData['shipping']['service']);

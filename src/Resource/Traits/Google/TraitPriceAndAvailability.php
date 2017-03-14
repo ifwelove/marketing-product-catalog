@@ -14,7 +14,7 @@ trait TraitPriceAndAvailability
 
         return $this;
     }
-    
+
     private function validAvailability()
     {
         $conds = [

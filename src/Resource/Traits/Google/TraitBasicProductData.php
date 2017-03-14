@@ -26,7 +26,7 @@ trait TraitBasicProductData
 
         return $this;
     }
-    
+
     private function validDescription()
     {
         if (!isset($this->getRawData()['description'])) {
