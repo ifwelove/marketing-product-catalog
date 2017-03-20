@@ -34,11 +34,14 @@ class FacebookAdapterTest extends AbstractTestCase
                 'google_product_category' => 1,
                 'custom_label_0' => 100,
                 'custom_label_1' => 1,
-                'shipping' => [
-                    'country' => 'TW',
-                    'service' => 'Standard',
-                    'price' => '236 TWD',
-                ]
+                'custom_label_2' => 1,
+                'custom_label_3' => 1,
+                'custom_label_4' => 1,
+                // 'shipping' => [
+                //     'country' => 'TW',
+                //     'service' => 'Standard',
+                //     'price' => '236 TWD',
+                // ]
             ],
             [
                 'id' => '745123',
@@ -53,12 +56,15 @@ class FacebookAdapterTest extends AbstractTestCase
                 'product_type' => 1,
                 'custom_label_0' => 100,
                 'custom_label_1' => 1,
+                'custom_label_2' => 1,
+                'custom_label_3' => 1,
+                'custom_label_4' => 1,
                 'google_product_category' => 1,
-                'shipping' => [
-                    'country' => 'TW',
-                    'service' => 'Standard',
-                    'price' => '236 TWD',
-                ]
+                // 'shipping' => [
+                //     'country' => 'TW',
+                //     'service' => 'Standard',
+                //     'price' => '236 TWD',
+                // ]
             ],
         ];
     }

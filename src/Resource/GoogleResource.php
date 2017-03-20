@@ -6,6 +6,7 @@ use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitPriceAndAvaila
 use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitProductCategory as ProductCategory;
 use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitProductIdentifiers as ProductIdentifiers;
 use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitDetailedProductDescription as DetailedProductDescription;
+use Verybuy\Marketing\Product\Catalog\Resource\Traits\Google\TraitCustomLabel as CustomLabel;
 
 class GoogleResource extends ResourceContract
 {
@@ -13,7 +14,8 @@ class GoogleResource extends ResourceContract
         PriceAndAvailability,
         ProductCategory,
         ProductIdentifiers,
-        DetailedProductDescription;
+        DetailedProductDescription,
+        CustomLabel;
 
     public function validate()
     {
@@ -29,5 +31,6 @@ class GoogleResource extends ResourceContract
         $this->validCondition();
         $this->validAdult();
         $this->validBrand();
+        $this->validCustomLabel();
     }
 }
