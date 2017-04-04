@@ -21,51 +21,50 @@ class GoogleAdapterTest extends AbstractTestCase
 
         $this->resourceStub = [
             [
-                'id' => '745130',
-                'title' => '包郵大碼女內褲性感蕾絲面料透明網紗中腰三角褲包臀無痕提臀胖mm',
-                'description' => '包郵大碼女內褲性感蕾絲面料透明網紗中腰三角褲包臀無痕提臀胖mm',
+                'id' => '9166976',
+                'title' => '羽絨馬甲女秋冬中長款大碼服裝韓版連帽背心顯瘦棉坎肩修身馬夾女#9166976',
+                'description' => '羽絨馬甲女秋冬中長款大碼服裝韓版連帽背心顯瘦棉坎肩修身馬夾女#9166976',
                 'brand' => 'VeryBuy',
-                'link' => 'http://www.verybuy.cc/user_submit/item/745130',
-                'image_link' => 'http://img.verybuy.cc/taobao_user_submit/1a842d087b481d7cae79f76dda8fd5a6_600.jpg',
+                'link' => 'http://www.verybuy.cc/user_submit/item/9166976',
+                'image_link' => 'http://img.ssl.verybuy.cc/taobao_user_submit/8cd753871468887989de503d078aac0e.jpg',
                 'condition' => 'new',
                 'availability' => 'in stock',
-                'price' => 236,
-                'product_type' => 1,
-                'google_product_category' => 1,
+                'price' => '1069 TWD',
+                'product_type' => 20,
+                'google_product_category' => 166,
                 'custom_label_0' => 1,
-                'custom_label_1' => 3,
-                'custom_label_2' => 'custom_label_2',
-                'custom_label_3' => 'custom_label_3',
-                'custom_label_4' => 'custom_label_4',
-//                'shipping' => [
-//                    'country' => 'TW',
-//                    'service' => 'Standard',
-//                    'price' => '236 TWD',
-//                ]
+                'custom_label_1' => 1,
+                'custom_label_2' => '羽絨馬甲女秋冬中長款大碼服裝韓版連帽背心顯瘦棉坎肩修身馬夾女',
+                'custom_label_3' => '',
+                'custom_label_4' => '',
+                // 'shipping' => [
+                //     'country' => 'TW',
+                //     'service' => 'Standard',
+                //     'price' => '236 TWD',
+                // ]
             ],
             [
-                'id' => '745123',
-                'title' => '一片式無肩帶內衣聚攏防滑隱形婚紗禮服專用美背小胸加厚文胸套裝',
-                'description' => '一片式無肩帶內衣聚攏防滑隱形婚紗禮服專用美背小胸加厚文胸套裝',
-                'price' => 409,
+                'id' => '9166985',
+                'title' => '2015秋裝新款公主修身大碼秋天蓬蓬裙伴娘小禮服冬季打底連衣裙厚#9166985',
+                'description' => '2015秋裝新款公主修身大碼秋天蓬蓬裙伴娘小禮服冬季打底連衣裙厚#9166985',
                 'brand' => 'VeryBuy',
-                'link' => 'http://www.verybuy.cc/user_submit/item/745123',
-                'image_link' => 'http://img.verybuy.cc/taobao_user_submit/679711600f1339ad421e96c571290cda_600.jpg',
+                'link' => 'http://www.verybuy.cc/user_submit/item/9166985',
+                'image_link' => 'http://img.ssl.verybuy.cc/taobao_user_submit/757916d333de33e6f7de3c5b0906b040.jpg',
                 'condition' => 'new',
-                'adult' => 'yes',
                 'availability' => 'in stock',
-                'product_type' => 1,
-                'google_product_category' => 1,
-                'custom_label_0' => 1,
-                'custom_label_1' => 3,
-                'custom_label_2' => 'custom_label_2',
-                'custom_label_3' => 'custom_label_3',
-                'custom_label_4' => 'custom_label_4',
-//                'shipping' => [
-//                    'country' => 'TW',
-//                    'service' => 'Standard',
-//                    'price' => '236 TWD',
-//                ]
+                'price' => '851 TWD',
+                'product_type' => 14,
+                'google_product_category' => 166,
+                'custom_label_0' => 10,
+                'custom_label_1' => 1,
+                'custom_label_2' => '羽絨馬甲女秋冬中長款大碼服裝韓版連帽背心顯瘦棉坎肩修身馬夾女',
+                'custom_label_3' => '',
+                'custom_label_4' => '',
+                // 'shipping' => [
+                //     'country' => 'TW',
+                //     'service' => 'Standard',
+                //     'price' => '236 TWD',
+                // ]
             ],
         ];
     }
@@ -79,6 +78,15 @@ class GoogleAdapterTest extends AbstractTestCase
         ;
 //        dump($xml);
         //@todo xml assert
+    }
+
+    public function testSaveCVS()
+    {
+        $csv = MarketingFactory::create(AdapterContract::FACEBOOK)
+            ->config($this->config)
+            ->import($this->resourceStub)
+             ->saveCsv('vendor/file.csv')
+        ;
     }
 
     public function testAdapterSetConfig()

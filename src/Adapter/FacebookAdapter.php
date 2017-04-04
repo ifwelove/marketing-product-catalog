@@ -3,6 +3,7 @@
 namespace Verybuy\Marketing\Product\Catalog\Adapter;
 
 use Verybuy\Marketing\Product\Catalog\Helpers\ExSimpleXMLElement;
+use League\Csv\Writer;
 
 class FacebookAdapter extends AbstractAdapter
 {
@@ -42,5 +43,26 @@ class FacebookAdapter extends AbstractAdapter
         });
 
         return $xml;
+    }
+
+    public function getCsvHeader()
+    {
+        $header = ['id', 'title', 'description', 'brand', 'link', 'image_link', 'condition', 'availability', 'price', 'product_type', 'google_product_category', 'custom_label_0', 'custom_label_1', 'custom_label_2', 'custom_label_3', 'custom_label_4'];
+        return $header;
+    }
+
+    public function saveCsv($filePath = '', $header = true)
+    {
+        $csv = Writer::createFromPath($filePath, 'a');
+        if($header) {
+            $csv->insertOne($this->getCsvHeader());
+        }
+        $collection = $this->getSuccessCollection();
+        $collection->each(function ($item) use ($csv) {
+            $rawData = $item->getRawData();
+            $csv->insertOne($rawData);
+        });
+
+        return $csv;
     }
 }

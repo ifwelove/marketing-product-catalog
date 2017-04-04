@@ -12,4 +12,5 @@ interface AdapterContract
     public function import(array $data);
     public function validation();
     public function toXml();
+    public function saveCsv($filePath, $header);
 }
