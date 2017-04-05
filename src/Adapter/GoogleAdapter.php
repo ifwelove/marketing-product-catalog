@@ -48,7 +48,7 @@ class GoogleAdapter extends AbstractAdapter
 
     public function getCsvHeader()
     {
-        $header = ['id', 'title', 'description', 'brand', 'link', 'image_link', 'condition', 'availability', 'price', 'product_type', 'google_product_category', 'custom_label_0', 'custom_label_1', 'custom_label_2', 'custom_label_3', 'custom_label_4'];
+        $header = ['id', 'title', 'description', 'brand', 'link', 'image_link', 'adult', 'condition', 'availability', 'price', 'product_type', 'google_product_category', 'custom_label_0', 'custom_label_1', 'custom_label_2', 'custom_label_3', 'custom_label_4'];
         return $header;
     }
 
